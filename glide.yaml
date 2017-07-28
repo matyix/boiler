@@ -1,0 +1,6 @@
+package: github.com/rybit/seltzer
+import:
+- package: github.com/Sirupsen/logrus
+  version: v0.10.0
+- package: github.com/spf13/cobra
+- package: github.com/spf13/viper
