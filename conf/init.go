@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
-  "github.com/spf13/viper"
+  	"github.com/spf13/viper"
 )
 
 func main() {
