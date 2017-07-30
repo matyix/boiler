@@ -46,4 +46,14 @@ func ConfigureLogging(config *LoggingConfig) (*logrus.Entry, error) {
 	})
 
 	return logrus.StandardLogger().WithField("hostname", hostname), nil
+	
+	/** Usage 
+	logger, err := conf.ConfigureLogging(&config.LogConfig)
+	if err != nil {
+		log.Fatal("Failed to configure logging: " + err.Error())
+	}
+
+	logger.Infof("Starting with config: %+v", config)
+	**/
 }
+
