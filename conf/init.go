@@ -3,13 +3,18 @@ package main
 import (
 	"fmt"
 	"log"
+	"github.com/spf13/cobra"
   	"github.com/spf13/viper"
 )
 
-func main() {
+func LoadConfig(cmd *cobra.Command) (*Config, error) {
+	err := viper.BindPFlags(cmd.Flags())
+	if err != nil {
+		return nil, err
+	}
 
 	viper.SetConfigFile("./conf/init.json")
-  //alternatives
+  	//alternatives
 	viper.AddConfigPath("./conf")
 	viper.AddConfigPath("$HOME/conf")
 	viper.SetConfigName("init")
