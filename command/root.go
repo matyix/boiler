@@ -22,5 +22,11 @@ func run(command *cobra.Command, args []string) {
 	if err != nil {
 		log.Fatal("Failed to load config: " + err.Error())
 	}
+	
+	logger, err := conf.ConfigureLogging(&config.LogConfig)
+	if err != nil {
+		log.Fatal("Failed to configure logging: " + err.Error())
+	}
 
+	logger.Infof("Starting with config: %+v", config)
 }
